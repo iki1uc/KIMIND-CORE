@@ -47,6 +47,31 @@ KIMIND-CORE.ROOT:
     S8: [DNA](ca://s?q=Station_DNA)
     S9: [ID](ca://s?q=Station_ID)
 
+  TECH:
+    LOAD:
+      - 12eallinallout.room
+      - 6D-Baum.raw
+      - 6E6D.tech
+      - NC
+      - NC.lock
+      - NC.sync
+      - NC1
+      - NC3.lock
+      - NC4.sync
+      - NC5.lock
+      - NCocta.dual
+      - NCocta3.merge
+      - NCocta3.align
+      - STATIONEN.raw
+      - level-pyramiden-7.csv
+      - level-pyramiden-71.csv
+      - level-pyramiden-72.csv
+      - level-pyramiden-73.csv
+      - level-pyramiden-74.csv
+      - level-pyramiden-75.csv
+      - level-pyramiden-76.csv
+      - level-pyramiden-77.csv
+
   STATUS:
     CLEAN: TRUE
     READY: TRUE
