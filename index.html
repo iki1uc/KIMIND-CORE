@@ -2,20 +2,80 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>KIMIND‑CORE Loader</title>
+<title>KIMIND‑CORE · Boot System</title>
+<style>
+  body {
+    background: #000;
+    color: #0f0;
+    font-family: Consolas, monospace;
+    padding: 20px;
+  }
+  .boot-line {
+    margin: 6px 0;
+  }
+  .station-list, .tech-list {
+    margin-top: 20px;
+    padding-left: 20px;
+  }
+  a {
+    color: #0ff;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #fff;
+  }
+</style>
+<script src="mind.js"></script>
 </head>
+
 <body>
 
-<h1>KIMIND‑CORE · Stations‑Loader</h1>
+<h1>KIMIND‑CORE.ROOT · Boot‑Screen</h1>
 
-<ul>
+<div id="boot">
+  <div class="boot-line">BOOT: START</div>
+  <div class="boot-line">BOOT: MODULES ONLINE</div>
+  <div class="boot-line">BOOT: TMP‑ENGINE READY</div>
+  <div class="boot-line">BOOT: STATIONS LIVE</div>
+  <div class="boot-line">BOOT: TECH OK</div>
+  <div class="boot-line">BOOT: PIPELINE 0‑1‑2 ACTIVE</div>
+  <div class="boot-line">BOOT: FINAL</div>
+  <div class="boot-line">BOOT: SCREEN.OPEN</div>
+  <div class="boot-line">STATUS: SYSTEM READY</div>
+</div>
+
+<hr>
+
+<h2>📡 Stationen (LIVE)</h2>
+<ul class="station-list">
   <li><a href="B/index.html">Station B</a></li>
   <li><a href="H/index.html">Station H</a></li>
   <li><a href="T/index.html">Station T</a></li>
   <li><a href="U/index.html">Station U</a></li>
   <li><a href="Y/index.html">Station Y</a></li>
   <li><a href="Z/index.html">Station Z</a></li>
+  <li><a href="ROT/index.html">Station ROT</a></li>
+  <li><a href="DNA/index.html">Station DNA</a></li>
+  <li><a href="ID.html">Station ID</a></li>
 </ul>
+
+<hr>
+
+<h2>⚙ TECH‑Module</h2>
+<ul class="tech-list">
+  <li>12eallinallout.room</li>
+  <li>6D‑Baum.raw</li>
+  <li>6E6D.tech</li>
+  <li>NC / NC.lock / NC.sync / NC1 / NC3 / NC4 / NC5</li>
+  <li>NCocta.dual / merge / align</li>
+  <li>STATIONEN.raw</li>
+  <li>level‑pyramiden‑7.csv → 77.csv</li>
+</ul>
+
+<hr>
+
+<h2>🧠 KIMIND‑CORE.ROOT</h2>
+<p>System läuft vollständig. Alle Module aktiv.</p>
 
 </body>
 </html>
