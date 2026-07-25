@@ -1,0 +1,34 @@
+# ROOM · Achsen‑Engine‑Gerüst
+# kompatibel mit NC², OPTA², OPTA³, 6E→6D
+
+AXIS: <ACHSE>
+ALIAS: <BUCHSTABE>
+
+ENGINE:
+  IN:    <ACHSE>.IN
+  CORE:  <ACHSE>.CORE
+  OUT:   <ACHSE>.OUT
+
+OPTA:
+  OCTA²: NC²octa².dual
+  OCTA³: NC²octa³.align
+
+NC²:
+  NODE: NC²□
+  LOCK: NC²□.lock
+  SYNC: NC²□.sync
+
+6D:
+  TREE: 6D‑Baum.raw
+  TECH: 6E → 6D.tech
+
+PYRAMIDEN:
+  LEVEL: level‑pyramiden-7.csv
+
+STATIONEN:
+  RAW: STATIONEN.raw
+
+LOOP:
+  MODE: <698869 | 968896>
+
+# END
