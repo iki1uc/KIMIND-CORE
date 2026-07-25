@@ -1,31 +1,31 @@
-KIMIND-CORE:
+KIMIND-CORE.ROOT:
   SYSTEM:
-    NAME: KIMIND-CORE
-    ROOT: iki1uc
+    NAME: KIMIND-CORE.ROOT
+    OWNER: iki1uc
     DIM: 3x3x3 + 9x9
     MATRIX:
-      RAW: 81
-      META: 243
-      AXIS: 768
+      RAW: [81](ca://s?q=RAW81_basis)
+      META: [243](ca://s?q=243_matrix)
+      AXIS: [768](ca://s?q=768_axis)
 
-  MODULES:
-    - Station.ROOT
-    - RUN8.ROOT
-    - Vector.ROOT
-    - Whirl.ROOT
-    - AvPI.ROOT
+  ROOT-MODULES:
+    - [Station.ROOT](ca://s?q=Station_ROOT)
+    - [RUN8.ROOT](ca://s?q=RUN8_ROOT)
+    - [Vector.ROOT](ca://s?q=Vector_ROOT)
+    - [Whirl.ROOT](ca://s?q=Whirl_ROOT)
+    - [AvPI.ROOT](ca://s?q=AvPI_ROOT)
 
-  TMP:
+  TMP-ENGINE:
     SCAN:
-      - AI3ki
-      - 243
-      - 768
-      - 001
-      - 003
-      - 005
-      - 008
-      - 009
-      - DE.ROOM
+      - [AI3ki](ca://s?q=AI3ki_scan)
+      - [243](ca://s?q=243_scan)
+      - [768](ca://s?q=768_scan)
+      - [001](ca://s?q=001_scan)
+      - [003](ca://s?q=003_scan)
+      - [005](ca://s?q=005_scan)
+      - [008](ca://s?q=008_scan)
+      - [009](ca://s?q=009_scan)
+      - [DE.ROOM](ca://s?q=DE_ROOM_scan)
 
     SEARCH: ENABLED
     INDEX: ENABLED
@@ -37,16 +37,17 @@ KIMIND-CORE:
     2: R3 → S7,S8,S9
 
   STATIONS:
-    S1: B
-    S2: H
-    S3: T
-    S4: U
-    S5: Y
-    S6: Z
-    S7: ROT
-    S8: DNA
-    S9: ID
+    S1: [B](ca://s?q=Station_B)
+    S2: [H](ca://s?q=Station_H)
+    S3: [T](ca://s?q=Station_T)
+    S4: [U](ca://s?q=Station_U)
+    S5: [Y](ca://s?q=Station_Y)
+    S6: [Z](ca://s?q=Station_Z)
+    S7: [ROT](ca://s?q=Station_ROT)
+    S8: [DNA](ca://s?q=Station_DNA)
+    S9: [ID](ca://s?q=Station_ID)
 
   STATUS:
     CLEAN: TRUE
     READY: TRUE
+    ROOT: ACTIVE
