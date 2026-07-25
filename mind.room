@@ -1,0 +1,52 @@
+KIMIND-CORE:
+  SYSTEM:
+    NAME: KIMIND-CORE
+    ROOT: iki1uc
+    DIM: 3x3x3 + 9x9
+    MATRIX:
+      RAW: 81
+      META: 243
+      AXIS: 768
+
+  MODULES:
+    - Station.ROOT
+    - RUN8.ROOT
+    - Vector.ROOT
+    - Whirl.ROOT
+    - AvPI.ROOT
+
+  TMP:
+    SCAN:
+      - AI3ki
+      - 243
+      - 768
+      - 001
+      - 003
+      - 005
+      - 008
+      - 009
+      - DE.ROOM
+
+    SEARCH: ENABLED
+    INDEX: ENABLED
+    VERIFY: ENABLED
+
+  PIPELINE:
+    0: R1 → S1,S2,S3
+    1: R2 → S4,S5,S6
+    2: R3 → S7,S8,S9
+
+  STATIONS:
+    S1: B
+    S2: H
+    S3: T
+    S4: U
+    S5: Y
+    S6: Z
+    S7: ROT
+    S8: DNA
+    S9: ID
+
+  STATUS:
+    CLEAN: TRUE
+    READY: TRUE
