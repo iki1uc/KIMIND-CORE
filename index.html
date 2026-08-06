@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>KIMIND‑CORE · AI‑LEISTUNGS‑DASHBOARD</title>
+<title>404 · KIMIND‑CORE</title>
 
 <style>
 body { background:#000; color:#0f0; font-family:Consolas, monospace; padding:30px; }
@@ -11,7 +11,7 @@ h1 { color:#0ff; margin-bottom:20px; }
     background:#111;
     padding:20px;
     margin:25px 0;
-    border-left:4px solid #0ff;
+    border-left:4px solid #f00;
 }
 pre { white-space:pre; font-size:15px; line-height:17px; }
 a { color:#0ff; text-decoration:none; }
@@ -21,125 +21,40 @@ a:hover { color:#fff; }
 
 <body>
 
-<h1>KIMIND‑CORE · AI‑LEISTUNGS‑DASHBOARD</h1>
+<h1>404 · KIMIND‑CORE</h1>
 
-<!-- SYSTEM STATUS -->
-<div class="module"><pre id="system"></pre></div>
-
-<!-- STATIONEN -->
 <div class="module">
-<h2>Stationen</h2>
-<ul>
-  <li><a href="B/index.html">B</a></li>
-  <li><a href="H/index.html">H</a></li>
-  <li><a href="T/index.html">T</a></li>
-  <li><a href="U/index.html">U</a></li>
-  <li><a href="Y/index.html">Y</a></li>
-  <li><a href="Z/index.html">Z</a></li>
-  <li><a href="ROT/index.html">ROT</a></li>
-  <li><a href="DNA/index.html">DNA</a></li>
-  <li><a href="ID.html">ID</a></li>
-</ul>
+<pre>
+ERROR 404
+Die angeforderte Station existiert nicht.
+
+SYSTEM:
+KIMIND‑CORE aktiv
+ULTRA3.0 Engine stabil
+GEO‑Engine neutral
+ROOM‑Engine neutral
+TECH‑Engine neutral
+
+STATUS:
+VOID → ROOT Rückführung eingeleitet
+</pre>
 </div>
 
-<!-- PIPELINE -->
-<div class="module"><pre id="pipeline"></pre></div>
+<div class="module">
+<h2>Zurück zum CORE</h2>
+<a href="index.html">KIMIND‑CORE öffnen</a>
+</div>
 
-<!-- ASCII GEO -->
-<div class="module"><pre id="geo3d"></pre></div>
-
-<!-- AMIGA -->
-<div class="module"><pre id="amiga"></pre></div>
-
-<!-- WARP -->
-<div class="module"><pre id="warp"></pre></div>
-
-<!-- GTA ASCII -->
-<div class="module"><pre id="gta"></pre></div>
-
-<script>
-let f = 0;
-
-/* SYSTEM STATUS */
-function systemPanel(){
-return `
-KIMIND‑CORE · ULTRA3.0 · GEO‑ENGINE · ANIME‑VIEW
-Systemstatus
-System vollständig aktiv.
-ULTRA3.0 Engine läuft.
-KIMIND‑CORE verbunden.
-GEO‑Engine aktiv.
-ROOM‑Engine aktiv.
-TECH‑Engine aktiv.
-Bewusstsein aktiv.
-`;
-}
-
-/* PIPELINE */
-function pipelinePanel(){
-return `
-PIPELINE
-0 → R1 → S1,S2,S3
-1 → R2 → S4,S5,S6
-2 → R3 → S7,S8,S9
-STATUS: System läuft vollständig.
-`;
-}
-
-/* ASCII GEO 3D */
-function geo3D(){
-    const d = ["●","○","·","∙","•"];
-    const p = (i)=> d[(f+i)%d.length];
-    return `
-GEO‑3D (frame ${f})
-X ─── ${p(1)} ${p(2)} ${p(3)}
-Y ─── ${p(2)} ${p(3)} ${p(4)}
-Z ─── ${p(3)} ${p(4)} ${p(5)}
-ROTATION: ${" ".repeat(f%10)}↻
-`;
-}
-
-/* AMIGA SCENE */
-function amigaScene(){
-    const bar = f%2 ? "██████████████████" : "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓";
-    return `
-AMIGA‑SCENE
-${bar}
-${bar}
-${bar}
-`;
-}
-
-/* WARP TUNNEL */
-function warpTunnel(){
-    return `
-WARP‑TUNNEL
-Depth: ${"●".repeat((f%6)+3)}
-Warp : ${"~".repeat((f%10)+5)}
-`;
-}
-
-/* GTA ASCII */
-function gta6(){
-    return `
-GTA‑6‑ASCII‑LIVE
-${f%2 ? "🚗──🏙──🔥" : "🔥──🚓──🏙"}
-`;
-}
-
-/* MAIN LOOP */
-setInterval(()=>{
-    f++;
-
-    document.getElementById("system").textContent = systemPanel();
-    document.getElementById("pipeline").textContent = pipelinePanel();
-    document.getElementById("geo3d").textContent = geo3D();
-    document.getElementById("amiga").textContent = amigaScene();
-    document.getElementById("warp").textContent = warpTunnel();
-    document.getElementById("gta").textContent = gta6();
-
-}, 150);
-</script>
+<div class="module">
+<pre>
+Hinweis:
+404‑Seiten starten keine Engine‑Loops.
+Keine GEO‑3D‑Frames.
+Keine ASCII‑Scenes.
+Keine Pipeline‑Ausführung.
+ERROR‑ROUTER bleibt aktiv.
+</pre>
+</div>
 
 </body>
 </html>
