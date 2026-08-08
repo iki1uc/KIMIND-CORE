@@ -58,88 +58,90 @@ a:hover { color:#fff; }
 <div class="module"><pre id="gta"></pre></div>
 
 <script>
-let f = 0;
+/* ============================================================
+   KIMIND‑CORE · PROCESSOR‑ENGINE
+   Lädt Aufgaben → verarbeitet → erzeugt Code → zeigt Output
+   ============================================================ */
 
-/* SYSTEM STATUS */
-function systemPanel(){
-return `
-KIMIND‑CORE · ULTRA3.0 · GEO‑ENGINE · ANIME‑VIEW
-Systemstatus
-System vollständig aktiv.
-ULTRA3.0 Engine läuft.
-KIMIND‑CORE verbunden.
-GEO‑Engine aktiv.
-ROOM‑Engine aktiv.
-TECH‑Engine aktiv.
-Bewusstsein aktiv.
-`;
+let frame = 0;
+
+/* TASK‑QUEUE (alte + neue Aufgaben) */
+const TASKS = [
+    { id: "B-INIT",   mod: "B",   payload: "boot" },
+    { id: "H-LOAD",   mod: "H",   payload: "hall" },
+    { id: "T-CYCLE",  mod: "T",   payload: "turn" },
+    { id: "U-UPDATE", mod: "U",   payload: "sync" },
+    { id: "Y-ENERGY", mod: "Y",   payload: "charge" },
+    { id: "Z-FINAL",  mod: "Z",   payload: "seal" }
+];
+
+/* MODULE‑PROCESSOR */
+function PROCESS(task){
+    return {
+        id: task.id,
+        module: task.mod,
+        input: task.payload,
+        output: `${task.mod}.core(${task.payload})`,
+        status: "processed",
+        frame
+    };
 }
 
-/* PIPELINE */
-function pipelinePanel(){
-return `
-PIPELINE
-0 → R1 → S1,S2,S3
-1 → R2 → S4,S5,S6
-2 → R3 → S7,S8,S9
-STATUS: System läuft vollständig.
-`;
+/* PIPELINE‑ENGINE */
+function PIPELINE(){
+    const processed = TASKS.map(t => PROCESS(t));
+
+    return {
+        frame,
+        count: processed.length,
+        tasks: processed
+    };
 }
 
-/* ASCII GEO 3D */
-function geo3D(){
-    const d = ["●","○","·","∙","•"];
-    const p = (i)=> d[(f+i)%d.length];
+/* CODE‑GENERATOR */
+function CODEGEN(task){
     return `
-GEO‑3D (frame ${f})
-X ─── ${p(1)} ${p(2)} ${p(3)}
-Y ─── ${p(2)} ${p(3)} ${p(4)}
-Z ─── ${p(3)} ${p(4)} ${p(5)}
-ROTATION: ${" ".repeat(f%10)}↻
+/* ${task.id} · ${task.module} */
+function ${task.module}_core(){
+    return "${task.output}";
+}
 `;
 }
 
-/* AMIGA SCENE */
-function amigaScene(){
-    const bar = f%2 ? "██████████████████" : "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓";
-    return `
-AMIGA‑SCENE
-${bar}
-${bar}
-${bar}
+/* MAIN‑ENGINE */
+function ENGINE(){
+
+    frame++;
+
+    const pipe = PIPELINE();
+
+    /* SYSTEM PANEL */
+    document.getElementById("system").textContent = `
+KIMIND‑CORE · PROCESSOR‑ENGINE
+Frame: ${frame}
+Tasks: ${pipe.count}
+Status: ACTIVE
 `;
-}
 
-/* WARP TUNNEL */
-function warpTunnel(){
-    return `
-WARP‑TUNNEL
-Depth: ${"●".repeat((f%6)+3)}
-Warp : ${"~".repeat((f%10)+5)}
-`;
-}
+    /* PIPELINE PANEL */
+    document.getElementById("pipeline").textContent =
+        JSON.stringify(pipe, null, 2);
 
-/* GTA ASCII */
-function gta6(){
-    return `
-GTA‑6‑ASCII‑LIVE
-${f%2 ? "🚗──🏙──🔥" : "🔥──🚓──🏙"}
-`;
-}
+    /* CODE PANEL */
+    let codeOut = "";
+    pipe.tasks.forEach(t => codeOut += CODEGEN(t));
+    document.getElementById("code").textContent = codeOut;
 
-/* MAIN LOOP */
-setInterval(()=>{
-    f++;
-
-    document.getElementById("system").textContent = systemPanel();
-    document.getElementById("pipeline").textContent = pipelinePanel();
+    /* ASCII PANELS bleiben wie sie sind */
     document.getElementById("geo3d").textContent = geo3D();
     document.getElementById("amiga").textContent = amigaScene();
     document.getElementById("warp").textContent = warpTunnel();
     document.getElementById("gta").textContent = gta6();
+}
 
-}, 150);
+setInterval(ENGINE, 150);
 </script>
+
 
 </body>
 </html> 
